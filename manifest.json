@@ -1,0 +1,10 @@
+{
+  "name": "Livereload for Madock",
+  "description": "Live reloading web pages for madock",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting"]
+}
