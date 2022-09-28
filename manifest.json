@@ -6,7 +6,7 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "permissions": ["storage", "activeTab", "scripting", "tabs", "nativeMessaging"],
   "action": {
     "default_icon": {
       "128": "/images/icon_livereload_red128.png"
@@ -14,5 +14,11 @@
   },
   "icons": {
     "128": "/images/icon_livereload_green128.png"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["madock-livereload.js"]
+    }
+  ]
 }
