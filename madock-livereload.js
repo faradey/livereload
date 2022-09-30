@@ -1,6 +1,5 @@
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
-        console.log(request);
         if (request.actionType === "reload") {
             let paths = request.path.split("/");
             paths.reverse();
@@ -22,7 +21,11 @@ chrome.runtime.onMessage.addListener(
                     }
                 }
             });
+            sendResponse({actionType: "reload", result: "ok"});
+            return;
+        } else if(request.actionType === "error"){
+            alert(request.message);
         }
-        sendResponse({actionType: "reload", result: "ok"});
+        sendResponse({actionType: "unknown", result: "unknown"});
     }
 );
