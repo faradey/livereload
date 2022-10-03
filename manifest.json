@@ -6,7 +6,7 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["storage", "activeTab", "scripting", "tabs", "nativeMessaging"],
+  "permissions": ["activeTab", "scripting", "tabs", "nativeMessaging"],
   "action": {
     "default_icon": {
       "128": "/images/icon_livereload_red128.png"

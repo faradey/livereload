@@ -44,7 +44,9 @@ function connectToSocket(tab) {
         selectTab(tab.id);
         let mess  = error.message;
         console.log("Error: " + mess);
-        sendError(tab.id, "Error: " + mess);
+        if(tabConnStatuses[tab.id]) {
+            sendError(tab.id, "Error: " + mess);
+        }
     };
 }
 
